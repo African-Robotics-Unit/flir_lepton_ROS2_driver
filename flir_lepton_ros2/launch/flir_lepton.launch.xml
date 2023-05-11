@@ -1,0 +1,21 @@
+<launch>
+  <group>
+   <!-- publisher 1 -->
+   <node pkg="flir_lepton_ros2" exec="flir_lepton_publisher" name="flir_lepton_publisher" namespace="lepton1" output="screen">
+   <param name="serial_num" value="b'00170033-5110-3039-3433-373300000000'" />
+   </node>
+
+   <node pkg="flir_lepton_ros2" exec="flir_lepton_publisher" name="flir_lepton_publisher" namespace="lepton2" output="screen">
+    <param name="serial_num" value="b'00030015-5110-3039-3433-373300000000'" />
+    <remap from="lepton/thermal_raw" to="lepton2/thermal_raw"/>
+    <remap from="lepton/image_raw" to="lepton2/image_raw"/>
+   </node>
+
+   <!-- subscriber -->
+   <!-- node pkg="flir_lepton_ros2" exec="flir_lepton_subscriber" name="flir_lepton_subscriber" output="screen"> 
+   </node -->
+  </group>
+  <!-- <executable cm            #print("device serial number: {}".format(desc.serialNumber))
+d="ros2 bag record lepton/thermal_raw -o bags/test_lepton" output="screen" /> -->
+
+</launch>                        
