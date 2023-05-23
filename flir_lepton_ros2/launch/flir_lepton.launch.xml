@@ -15,7 +15,4 @@
    <!-- node pkg="flir_lepton_ros2" exec="flir_lepton_subscriber" name="flir_lepton_subscriber" output="screen"> 
    </node -->
   </group>
-  <!-- <executable cm            #print("device serial number: {}".format(desc.serialNumber))
-d="ros2 bag record lepton/thermal_raw -o bags/test_lepton" output="screen" /> -->
-
 </launch>                        
