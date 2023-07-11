@@ -6,11 +6,11 @@ try:
     libuvc = cdll.LoadLibrary("libuvc.dylib")
   elif platform.system() == 'Linux':
     try:
-      libuvc = cdll.LoadLibrary("/usr/local/lib/libuvc.so.0")
+      libuvc = cdll.LoadLibrary("/usr/local/lib/libuvc.so")
     except OSError:
-      libuvc = cdll.LoadLibrary("libuvc.so.0")
+      libuvc = cdll.LoadLibrary("/usr/local/lib/libuvc.so")
   else:
-    libuvc = cdll.LoadLibrary("libuvc")
+    libuvc = cdll.LoadLibrary("/usr/local/lib/libuvc.so")
 except OSError:
   print("Error: could not find libuvc!")
   exit(1)

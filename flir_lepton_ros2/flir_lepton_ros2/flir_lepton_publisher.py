@@ -39,6 +39,7 @@ class FlirLepton(object):
         
         
         self.devs = self.get_devices(self.ctx)
+        print(self.devs)
         
         if len(self.devs) == 0:
             print("Did not find any devices")
@@ -218,6 +219,7 @@ class FlirLeptonPublisher(Node):
 
 
 def main(args=None):
+    print("START NODE")
     rclpy.init(args=args)
     nh = FlirLeptonPublisher()
     
